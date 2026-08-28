@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    color: #1F1F1F;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Luxury Color Tokens */
+.bg-warm-white { background-color: #FAF8F5; }
+.bg-beige { background-color: #F4EFEA; }
+.bg-cream { background-color: #EFE8DF; }
+.bg-dark-brown { background-color: #2C1E16; }
+.bg-charcoal { background-color: #1A1A1A; }
+.bg-accent-gold { background-color: #C5A059; }
+
+.text-accent-gold { color: #C5A059; }
+.text-dark-brown { color: #2C1E16; }
+.border-accent-gold { border-color: #C5A059; }
+
+/* Custom Glassmorphism & Visual Depth */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(239, 232, 223, 0.8);
+}
+
+.glass-card-dark {
+  background: rgba(28, 25, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9B7B38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5A059 0%, #B59048 100%);
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(135deg, #C5A059, #EFE8DF) 1;
+}
+
+/* Hide scrollbar for clean UI horizontally */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2C1E16;
+}
+
+/* Animations */
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
